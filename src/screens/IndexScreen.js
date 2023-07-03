@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Button ,TouchableOpacity} from 'react-native';
 import { Context } from '../context/BlogContext';
 import { Entypo } from '@expo/vector-icons'; 
 const IndexScreen = () => {
@@ -18,7 +18,11 @@ const IndexScreen = () => {
             <Text style={styles.title}>
           {item.id}{' '}  {item.title}
             </Text> 
-            <Entypo name="trash" style={styles.icon} color="black" />
+<TouchableOpacity onPress={()=>console.log(item.id)}>
+<Entypo name="trash" style={styles.icon} color="black" />
+</TouchableOpacity>
+           
+
           </View>;
         }}
       />
